@@ -1,6 +1,6 @@
 package com.technolearns.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import guru.springframework.norris.chuck.ChuckNorrisQuotes;
@@ -8,7 +8,12 @@ import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 @Service
 public class JokeServiceImpl implements JokesService {
 	
-	private  ChuckNorrisQuotes chuckNorrisQuotes= new ChuckNorrisQuotes();
+	private  ChuckNorrisQuotes chuckNorrisQuotes;
+	
+	public JokeServiceImpl() {
+		super();
+		chuckNorrisQuotes= new ChuckNorrisQuotes();
+	}
 	
 
 	@Override
@@ -17,5 +22,7 @@ public class JokeServiceImpl implements JokesService {
 		return chuckNorrisQuotes.getRandomQuote();
 
 	}
+
+	
 
 }
